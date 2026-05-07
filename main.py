@@ -36,8 +36,13 @@ if __name__ == "__main__":
         "=== Розв'язання нелінійного рівняння x³ - 2x² - 5x + 6 = 0 методом Ньютона ===\n"
     )
 
+    import os
+
+    mode = os.getenv("MODE", "eco")
+    print(f"Режим роботи: {mode.upper()}\n")
+
     # Початкові наближення
-    roots: list[int | float] = []
+    roots = []
     for x0 in [-2.0, 1.0, 3.0]:
         print(f"\n--- Початкове наближення x0 = {x0} ---")
         root = newton_method(x0)
